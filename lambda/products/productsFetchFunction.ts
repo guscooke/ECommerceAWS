@@ -1,5 +1,4 @@
 import { APIGatewayProxyEvent, APIGatewayProxyResult, Context } from "aws-lambda"
-
 // This func will be invoked by "APIGATEWAY"_AUTHORIZER_CHANGE_DEPLOYMENT_LOGICAL_ID, 
 // Need to pass APIGATEWAYEVENT and Returns to client APIGProxyREsult
 
@@ -22,7 +21,15 @@ export async function handler(event: APIGatewayProxyEvent,
                     })
                 }
             }
+        } else if (event.resource === "/products/{id}"){
+            const productId = event.pathParameters!.id as string
+            console.log(`GET /products/${productId}`)
+            return {
+                statusCode: 200,
+                body: `GET /products/${productId}`
+            }
         }
+
         return{
             statusCode: 400,
             body: JSON.stringify({
@@ -32,6 +39,4 @@ export async function handler(event: APIGatewayProxyEvent,
     }
 
 
-
-
-// geração de log consome cpuUsage, gera Custos e somos cobrados por tempo de execução lambda
+// geração de log consome CPUsage, gera Custos e somos cobrados por tempo de execução lambda
