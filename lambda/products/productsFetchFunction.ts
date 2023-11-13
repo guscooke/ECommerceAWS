@@ -26,7 +26,7 @@ export async function handler(event: APIGatewayProxyEvent,
             console.log(`GET /products/${productId}`)
             return {
                 statusCode: 200,
-                body: "GET /products/{id}"
+                body: `GET /products/${productId}`
             }
         }
 

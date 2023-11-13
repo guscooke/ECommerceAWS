@@ -22,7 +22,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::362788871927:role/cdk-hnb659fds-deploy-role-362788871927-us-east-1",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::362788871927:role/cdk-hnb659fds-cfn-exec-role-362788871927-us-east-1",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-362788871927-us-east-1/69108ad7ac29629a69d57b71829783a86ad248e37892fe9c2431b778963e5917.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-362788871927-us-east-1/5d496e1d150a323069f098344036ecc8356ae6b219e37846f961c4b0844bee21.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -53,16 +53,54 @@
             ]
           }
         ],
+        "/ProductsApp/ProductsDbd": [
+          {
+            "type": "aws:cdk:hasPhysicalName",
+            "data": {
+              "Ref": "ProductsDbdE3B3B002"
+            }
+          }
+        ],
+        "/ProductsApp/ProductsDbd/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ProductsDbdE3B3B002"
+          }
+        ],
         "/ProductsApp/productsFecthFunction/ServiceRole/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "productsFecthFunctionServiceRole5E6A4792"
           }
         ],
+        "/ProductsApp/productsFecthFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "productsFecthFunctionServiceRoleDefaultPolicyAB8AB62A"
+          }
+        ],
         "/ProductsApp/productsFecthFunction/Resource": [
           {
             "type": "aws:cdk:logicalId",
             "data": "productsFecthFunctionF7A20197"
+          }
+        ],
+        "/ProductsApp/productsAdminFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "productsAdminFunctionServiceRoleE1F41EDA"
+          }
+        ],
+        "/ProductsApp/productsAdminFunction/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "productsAdminFunctionServiceRoleDefaultPolicyD40B41D3"
+          }
+        ],
+        "/ProductsApp/productsAdminFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "productsAdminFunction605ACDF8"
           }
         ],
         "/ProductsApp/CDKMetadata/Default": [
@@ -75,6 +113,12 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "ExportsOutputFnGetAttproductsFecthFunctionF7A20197Arn28C25142"
+          }
+        ],
+        "/ProductsApp/Exports/Output{\"Fn::GetAtt\":[\"productsAdminFunction605ACDF8\",\"Arn\"]}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputFnGetAttproductsAdminFunction605ACDF8ArnF578556C"
           }
         ],
         "/ProductsApp/BootstrapVersion": [
@@ -113,7 +157,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::362788871927:role/cdk-hnb659fds-deploy-role-362788871927-us-east-1",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::362788871927:role/cdk-hnb659fds-cfn-exec-role-362788871927-us-east-1",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-362788871927-us-east-1/1071b8ea5740d7e045bad5da72539e5f3aa1e1fe7bda19f4b880fecebb57ca1b.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-362788871927-us-east-1/c1de16fa0cb911dc42fe6222a075ac41e5937a181b3c72d6569f88a528284ae5.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -172,7 +216,7 @@
         "/ECommerceApi/ECommerceApi/Deployment/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "ECommerceApiDeploymentC537DBB6105a6d17e818f0b7a3d3e5ce6434060e"
+            "data": "ECommerceApiDeploymentC537DBB6820a882e83665b802bc392ac24ad0d5e"
           }
         ],
         "/ECommerceApi/ECommerceApi/DeploymentStage.prod/Resource": [
@@ -209,6 +253,84 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "ECommerceApiproductsGET39FAC467"
+          }
+        ],
+        "/ECommerceApi/ECommerceApi/Default/products/{id}/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ECommerceApiproductsidBA77D237"
+          }
+        ],
+        "/ECommerceApi/ECommerceApi/Default/products/{id}/GET/ApiPermission.ECommerceApi3E70358D.GET..products.{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ECommerceApiproductsidGETApiPermissionECommerceApi3E70358DGETproductsid26FCFDD5"
+          }
+        ],
+        "/ECommerceApi/ECommerceApi/Default/products/{id}/GET/ApiPermission.Test.ECommerceApi3E70358D.GET..products.{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ECommerceApiproductsidGETApiPermissionTestECommerceApi3E70358DGETproductsidCF7E569E"
+          }
+        ],
+        "/ECommerceApi/ECommerceApi/Default/products/{id}/GET/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ECommerceApiproductsidGET92BAF597"
+          }
+        ],
+        "/ECommerceApi/ECommerceApi/Default/products/{id}/PUT/ApiPermission.ECommerceApi3E70358D.PUT..products.{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ECommerceApiproductsidPUTApiPermissionECommerceApi3E70358DPUTproductsid4B1016ED"
+          }
+        ],
+        "/ECommerceApi/ECommerceApi/Default/products/{id}/PUT/ApiPermission.Test.ECommerceApi3E70358D.PUT..products.{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ECommerceApiproductsidPUTApiPermissionTestECommerceApi3E70358DPUTproductsidC7AA5068"
+          }
+        ],
+        "/ECommerceApi/ECommerceApi/Default/products/{id}/PUT/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ECommerceApiproductsidPUTD9C81FF1"
+          }
+        ],
+        "/ECommerceApi/ECommerceApi/Default/products/{id}/DELETE/ApiPermission.ECommerceApi3E70358D.DELETE..products.{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ECommerceApiproductsidDELETEApiPermissionECommerceApi3E70358DDELETEproductsidD6C7799B"
+          }
+        ],
+        "/ECommerceApi/ECommerceApi/Default/products/{id}/DELETE/ApiPermission.Test.ECommerceApi3E70358D.DELETE..products.{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ECommerceApiproductsidDELETEApiPermissionTestECommerceApi3E70358DDELETEproductsid59D5159E"
+          }
+        ],
+        "/ECommerceApi/ECommerceApi/Default/products/{id}/DELETE/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ECommerceApiproductsidDELETE504E96B0"
+          }
+        ],
+        "/ECommerceApi/ECommerceApi/Default/products/POST/ApiPermission.ECommerceApi3E70358D.POST..products": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ECommerceApiproductsPOSTApiPermissionECommerceApi3E70358DPOSTproducts4EB30814"
+          }
+        ],
+        "/ECommerceApi/ECommerceApi/Default/products/POST/ApiPermission.Test.ECommerceApi3E70358D.POST..products": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ECommerceApiproductsPOSTApiPermissionTestECommerceApi3E70358DPOSTproductsD0ACCFC9"
+          }
+        ],
+        "/ECommerceApi/ECommerceApi/Default/products/POST/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ECommerceApiproductsPOST00574EB0"
           }
         ],
         "/ECommerceApi/CDKMetadata/Default": [
