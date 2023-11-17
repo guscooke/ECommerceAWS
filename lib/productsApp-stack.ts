@@ -26,7 +26,7 @@ export class ProductsAppStack extends cdk.Stack {
                 readCapacity: 1,
                 writeCapacity: 1
         })
-
+        //products layer
         const productsLayerArn = ssm.StringParameter.valueForStringParameter(this,"ProductsLayerVersionArn")
         const productsLayer = lambda.LayerVersion.fromLayerVersionArn(this, "ProductsLayerVersionArn", productsLayerArn)
 
@@ -44,7 +44,9 @@ export class ProductsAppStack extends cdk.Stack {
                 environment:{
                     PRODUCTS_DDB: this.productsDdb.tableName
                 },
-                layers: [productsLayer]
+                layers: [productsLayer],
+                runtime: lambda.Runtime.NODEJS_16_X,
+                tracing: lambda.Tracing.ACTIVE
              } )
 
         this.productsDdb.grantReadData(this.productsFetchHandler)
@@ -62,7 +64,10 @@ export class ProductsAppStack extends cdk.Stack {
                 },
                 environment:{
                     PRODUCTS_DDB: this.productsDdb.tableName
-                }
+                },
+                layers: [productsLayer],
+                runtime: lambda.Runtime.NODEJS_16_X,
+                tracing: lambda.Tracing.ACTIVE
              })
         
         this.productsDdb.grantWriteData(this.productsAdminHandler)

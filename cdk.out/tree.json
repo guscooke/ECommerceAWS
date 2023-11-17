@@ -4,6 +4,135 @@
     "id": "App",
     "path": "",
     "children": {
+      "ProductsAppLayers": {
+        "id": "ProductsAppLayers",
+        "path": "ProductsAppLayers",
+        "children": {
+          "ProductsLayer": {
+            "id": "ProductsLayer",
+            "path": "ProductsAppLayers/ProductsLayer",
+            "children": {
+              "Code": {
+                "id": "Code",
+                "path": "ProductsAppLayers/ProductsLayer/Code",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "ProductsAppLayers/ProductsLayer/Code/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "2.103.1"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "ProductsAppLayers/ProductsLayer/Code/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "2.103.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "2.103.1"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "ProductsAppLayers/ProductsLayer/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::LayerVersion",
+                  "aws:cdk:cloudformation:props": {
+                    "compatibleRuntimes": [
+                      "nodejs16.x"
+                    ],
+                    "content": {
+                      "s3Bucket": "cdk-hnb659fds-assets-362788871927-us-east-1",
+                      "s3Key": "69cf5e7eefcc8ef901e381e81bf992d9cccd306950cfba39da045797cb44bcfe.zip"
+                    },
+                    "layerName": "ProductsLayer"
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda.CfnLayerVersion",
+                  "version": "2.103.1"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_lambda.LayerVersion",
+              "version": "2.103.1"
+            }
+          },
+          "ProductsLayerVersionArn": {
+            "id": "ProductsLayerVersionArn",
+            "path": "ProductsAppLayers/ProductsLayerVersionArn",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "ProductsAppLayers/ProductsLayerVersionArn/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::SSM::Parameter",
+                  "aws:cdk:cloudformation:props": {
+                    "name": "ProductsLayerVersionArn",
+                    "type": "String",
+                    "value": {
+                      "Ref": "ProductsLayerE6FA8D3F"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ssm.CfnParameter",
+                  "version": "2.103.1"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_ssm.StringParameter",
+              "version": "2.103.1"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "ProductsAppLayers/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "ProductsAppLayers/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnResource",
+                  "version": "2.103.1"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.3.0"
+            }
+          },
+          "BootstrapVersion": {
+            "id": "BootstrapVersion",
+            "path": "ProductsAppLayers/BootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.103.1"
+            }
+          },
+          "CheckBootstrapVersion": {
+            "id": "CheckBootstrapVersion",
+            "path": "ProductsAppLayers/CheckBootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnRule",
+              "version": "2.103.1"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "aws-cdk-lib.Stack",
+          "version": "2.103.1"
+        }
+      },
       "ProductsApp": {
         "id": "ProductsApp",
         "path": "ProductsApp",
@@ -53,6 +182,30 @@
             },
             "constructInfo": {
               "fqn": "aws-cdk-lib.aws_dynamodb.Table",
+              "version": "2.103.1"
+            }
+          },
+          "SsmParameterValue:ProductsLayerVersionArn:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": {
+            "id": "SsmParameterValue:ProductsLayerVersionArn:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "path": "ProductsApp/SsmParameterValue:ProductsLayerVersionArn:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.103.1"
+            }
+          },
+          "SsmParameterValue:ProductsLayerVersionArn:C96584B6-F00A-464E-AD19-53AFF4B05118": {
+            "id": "SsmParameterValue:ProductsLayerVersionArn:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "path": "ProductsApp/SsmParameterValue:ProductsLayerVersionArn:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Resource",
+              "version": "2.103.1"
+            }
+          },
+          "ProductsLayerVersionArn": {
+            "id": "ProductsLayerVersionArn",
+            "path": "ProductsApp/ProductsLayerVersionArn",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Resource",
               "version": "2.103.1"
             }
           },
@@ -209,7 +362,7 @@
                   "aws:cdk:cloudformation:props": {
                     "code": {
                       "s3Bucket": "cdk-hnb659fds-assets-362788871927-us-east-1",
-                      "s3Key": "cc179868a98f7032fe84bf99f3fe26015b226de48bab2dcdec806ef2ac736575.zip"
+                      "s3Key": "40c4b9bbe3c4a024811626feababc45882b464c94e85fd9798838e554b4f682b.zip"
                     },
                     "environment": {
                       "variables": {
@@ -221,6 +374,11 @@
                     },
                     "functionName": "productsFetchFunction",
                     "handler": "index.handler",
+                    "layers": [
+                      {
+                        "Ref": "SsmParameterValueProductsLayerVersionArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+                      }
+                    ],
                     "memorySize": 128,
                     "role": {
                       "Fn::GetAtt": [
@@ -228,7 +386,7 @@
                         "Arn"
                       ]
                     },
-                    "runtime": "nodejs18.x",
+                    "runtime": "nodejs16.x",
                     "timeout": 5
                   }
                 },
@@ -393,7 +551,7 @@
                   "aws:cdk:cloudformation:props": {
                     "code": {
                       "s3Bucket": "cdk-hnb659fds-assets-362788871927-us-east-1",
-                      "s3Key": "15bfccab26ff1a5093fd08dac964fc72228ebb4392861ba71ae857b28be88127.zip"
+                      "s3Key": "3872fa76983b754957ffc6ac36dfa6292347fc2c21750e518ce221f00bcdc9db.zip"
                     },
                     "environment": {
                       "variables": {
@@ -405,6 +563,11 @@
                     },
                     "functionName": "productsAdminFunction",
                     "handler": "index.handler",
+                    "layers": [
+                      {
+                        "Ref": "SsmParameterValueProductsLayerVersionArnC96584B6F00A464EAD1953AFF4B05118Parameter"
+                      }
+                    ],
                     "memorySize": 128,
                     "role": {
                       "Fn::GetAtt": [
@@ -412,7 +575,7 @@
                         "Arn"
                       ]
                     },
-                    "runtime": "nodejs18.x",
+                    "runtime": "nodejs16.x",
                     "timeout": 5
                   }
                 },
@@ -497,13 +660,13 @@
         "id": "ECommerceApi",
         "path": "ECommerceApi",
         "children": {
-          "CommerceApiLogs": {
-            "id": "CommerceApiLogs",
-            "path": "ECommerceApi/CommerceApiLogs",
+          "ECommerceApiLogs": {
+            "id": "ECommerceApiLogs",
+            "path": "ECommerceApi/ECommerceApiLogs",
             "children": {
               "Resource": {
                 "id": "Resource",
-                "path": "ECommerceApi/CommerceApiLogs/Resource",
+                "path": "ECommerceApi/ECommerceApiLogs/Resource",
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::Logs::LogGroup",
                   "aws:cdk:cloudformation:props": {
@@ -655,7 +818,7 @@
                         "accessLogSetting": {
                           "destinationArn": {
                             "Fn::GetAtt": [
-                              "CommerceApiLogs913A1E17",
+                              "ECommerceApiLogs16FEC884",
                               "Arn"
                             ]
                           },

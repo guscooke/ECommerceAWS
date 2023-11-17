@@ -15,7 +15,7 @@ export class ECommerceApiStack extends cdk.Stack {
     constructor(scope: Construct, id: string, props: ECommerceApiStackProps){
         super(scope, id, props)
 
-        const logGroup = new cwlogs.LogGroup(this, "CommerceApiLogs")
+        const logGroup = new cwlogs.LogGroup(this, "ECommerceApiLogs")
 
         const api = new apigateway.RestApi(this, "ECommerceApi",{
             restApiName: "ECommerceApi",
